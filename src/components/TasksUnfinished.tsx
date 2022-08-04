@@ -12,6 +12,5 @@ export const TasksUnfinished = () => {
     ? entries(tasks).filter(([, task]) => !task.completed).length
     : '-'
 
-
-  return ( <h4> Tasks Yet To Do: { unfinishedTasks }</h4>)
+  return (<div className='absolute left-0 ml-px text-xs text-left mt-1.5 opacity-50 select-none'> {unfinishedTasks} tasks left</div>)
 }

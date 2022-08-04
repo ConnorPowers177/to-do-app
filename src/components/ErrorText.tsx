@@ -11,7 +11,7 @@ export const CreateUserErrorText: React.FunctionComponent<IErrorTextProps> = pro
 
   return (
     <div>
-      <small className='mb-4 '>
+      <small className='mb-4 dark:text-white'>
         {error}
       </small>
     </div>
@@ -25,7 +25,7 @@ export const LoginErrorText: React.FunctionComponent<IErrorTextProps> = props =>
 
   return (
     <div>
-      <small className='mb-4 '>
+      <small className='mb-4 dark:text-white'>
         {error}
       </small>
     </div>

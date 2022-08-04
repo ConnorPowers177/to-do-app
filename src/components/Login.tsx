@@ -68,20 +68,20 @@ export function Login() {
         <div className='absolute flex flex-col break-before-column inline-flex align-middle top-48 left-0 right-0' >
             <form className='mt-4' onSubmit={() => { }}>
                 <CreateUserErrorText error={createUserError} />
-                <input id='create-user-email' className='create-user ml-2 mr-2 h-10 w-63 outline-none border bg-slate-50 border-slate-50 shadow transition duration-500 hover:border-cyan-500 focus:border focus:border-cyan-500' placeholder='Email...' onChange={(event) => { setRegisterEmail(event.target.value) }} />
-                <input id='create-user-password' className='h-10 w-63 outline-none border bg-slate-50 border-slate-50 shadow transition duration-500 hover:border-cyan-500 focus:border focus:border-cyan-500' type='password' placeholder='Password...' onChange={(event) => { setRegisterPassword(event.target.value) }} />
+                <input id='create-user-email' className='create-user ml-2 mr-2 h-10 w-63 outline-none border bg-slate-50 border-slate-50 dark:bg-stone-800 shadow dark:border-stone-800 transition duration-500 hover:border-cyan-500 dark:hover:border-violet-600 focus:border focus:border-cyan-500 dark:focus:border-violet-600 dark:text-white focus:placeholder:text-transparent' placeholder='Email...' onChange={(event) => { setRegisterEmail(event.target.value) }} />
+                <input id='create-user-password' className='h-10 w-63 outline-none border bg-slate-50 border-slate-50 dark:bg-stone-800 shadow dark:border-stone-800 transition duration-500 hover:border-cyan-500 dark:hover:border-violet-600 focus:border focus:border-cyan-500 dark:focus:border-violet-600 dark:text-white focus:placeholder:text-transparent' type='password' placeholder='Password...' onChange={(event) => { setRegisterPassword(event.target.value) }} />
 
                 <div>
-                    <button id='create-user-button' type='submit' className='ml-2 font-BebasNeue px-1 py-0.25 text-sm rounded-full text-center text-slate-50 transition ease-in-out delay-150 bg-cyan-400 hover:scale-110 hover:bg-cyan-500 duration-300' onClick={register}>Create User</button>
+                    <button id='create-user-button' type='submit' className='ml-2 font-BebasNeue px-1 py-0.25 text-sm rounded-full text-center text-slate-50 transition ease-in-out delay-150 bg-cyan-400 hover:scale-110 hover:bg-cyan-500 duration-300 dark:bg-violet-400 dark:hover:bg-violet-600' onClick={register}>Create User</button>
                 </div>
             </form>
             <form className='mt-10' onSubmit={() => { }}>
                 <LoginErrorText error={loginError} />
-                <input id='login-email' className='login ml-2 mr-2 h-10 w-63 outline-none border bg-slate-50 border-slate-50 shadow transition duration-500 hover:border-cyan-500 focus:border focus:border-cyan-500' placeholder='Email...' onChange={(event) => { setLoginEmail(event.target.value) }} />
-                <input id='login-password' className='h-10 w-63 outline-none border bg-slate-50 border-slate-50 shadow transition duration-500 hover:border-cyan-500 focus:border focus:border-cyan-500' type='password' placeholder='Password...' onChange={(event) => { setLoginPassword(event.target.value) }} />
+                <input id='login-email' className='login ml-2 mr-2 h-10 w-63 outline-none border bg-slate-50 border-slate-50 dark:bg-stone-800 shadow dark:border-stone-800 transition duration-500 hover:border-cyan-500 dark:hover:border-violet-600 focus:border focus:border-cyan-500 dark:focus:border-violet-600 dark:text-white focus:placeholder:text-transparent' placeholder='Email...' onChange={(event) => { setLoginEmail(event.target.value) }} />
+                <input id='login-password' className='h-10 w-63 outline-none border bg-slate-50 border-slate-50 dark:bg-stone-800 shadow dark:border-stone-800 transition duration-500 hover:border-cyan-500 dark:hover:border-violet-600 focus:border focus:border-cyan-500 dark:focus:border-violet-600 dark:text-white focus:placeholder:text-transparent' type='password' placeholder='Password...' onChange={(event) => { setLoginPassword(event.target.value) }} />
 
                 <div>
-                    <button id='login-button' type='submit' className='ml-2 mb-10 font-BebasNeue px-1 py-0.25 text-sm rounded-full text-center text-slate-50 transition ease-in-out delay-150 bg-cyan-400 hover:scale-110 hover:bg-cyan-500 duration-300' onClick={login}>Login</button>
+                    <button id='login-button' type='submit' className='ml-2 mb-10 font-BebasNeue px-1 py-0.25 text-sm rounded-full text-center text-slate-50 transition ease-in-out delay-150 bg-cyan-400 hover:scale-110 hover:bg-cyan-500 duration-300 dark:bg-violet-400 dark:hover:bg-violet-600' onClick={login}>Login</button>
                 </div>
             </form>
         </div>
