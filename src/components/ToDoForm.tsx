@@ -1,14 +1,14 @@
 import { useTasks } from '../utils/hooks/use-tasks';
-import { useUserId } from '../utils/hooks/use-user-id';
+import { useUser } from '../utils/hooks/use-user';
 
 const ToDoForm = () => {
-  const [userId] = useUserId()
-  const [, , addNewTask] = useTasks(userId as string)
-  
+  const [user] = useUser<'ForceUser'>('ToDoForm')
+  const [, , addNewTask] = useTasks(user.uid)
+
   const handleSubmit = (e: any) => {
     e.preventDefault()
     const currentVal = e.target.task.value
-    addNewTask({ title: currentVal, completed: false, created: new Date()})
+    addNewTask({ title: currentVal, completed: false, created: new Date() })
     e.target.task.value = ''
   }
 

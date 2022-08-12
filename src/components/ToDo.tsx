@@ -1,16 +1,17 @@
-import { iTask, useTasks } from "../utils/hooks/use-tasks";
-import { useUserId } from "../utils/hooks/use-user-id";
+import { iTask, useTasks } from '../utils/hooks/use-tasks';
+import { useUser } from '../utils/hooks/use-user';
 
 type iProps = {
-  id: string
-  task: iTask
+    id: string
+    task: iTask
 }
-export const ToDo = ({id, task}: iProps) => {
-    const [userId] = useUserId()
-    const [, updateTask] = useTasks(userId as string)
 
-    const handleClick = (e: any) => {
-       updateTask(id, {...task, completed: !task.completed})
+export const ToDo = ({ id, task }: iProps) => {
+    const [user] = useUser<'ForceUser'>()
+    const [, updateTask, , removeTask] = useTasks(user.uid)
+
+    const handleClick = () => {
+        updateTask(id, { ...task, completed: !task.completed })
     }
 
     return (

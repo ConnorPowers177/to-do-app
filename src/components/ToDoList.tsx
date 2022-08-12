@@ -1,13 +1,12 @@
-import React from 'react'
+import { useState } from 'react'
 import { useTasks } from '../utils/hooks/use-tasks'
-import { useUserId } from '../utils/hooks/use-user-id'
+import { useUser } from '../utils/hooks/use-user'
 import { TasksUnfinished } from './TasksUnfinished'
 import { ToDo } from './ToDo'
-// import { ToDo } from "./ToDo"
 
-const ToDoList = ({}) => {
-  const [userId] = useUserId()
-  const [tasks, , , removeTask] = useTasks(userId as string)
+const ToDoList = () => {
+  const [user] = useUser<'ForceUser'>()
+  const [tasks, , , removeTask] = useTasks(user.uid)
 
   const toDoList = Object.entries(tasks ?? {})
 
@@ -15,6 +14,8 @@ const ToDoList = ({}) => {
     toDoList.filter(([id, task]) => task.completed).map(([id, task]) => removeTask(id))
   }
 
+  const toDoListActive = toDoList.filter(([id, task]) => !task.completed)
+  const toDoListCompleted = toDoList.filter(([id, task]) => task.completed)
 
   return (<div>
     {toDoList.map(([id, task]) => <ToDo key={id} id={id} task={task}/>)}
