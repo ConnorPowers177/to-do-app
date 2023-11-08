@@ -6,7 +6,7 @@ const { entries } = Object;
 
 
 export const TasksUnfinished = () => {
-  const [user] = useUser<'ForceUser'>()
+  const [user] = useUser()
   const [tasks] = useTasks(user.uid)
   const unfinishedTasks = tasks
     ? entries(tasks).filter(([, task]) => !task.completed).length

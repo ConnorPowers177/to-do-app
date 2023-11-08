@@ -7,7 +7,7 @@ type iProps = {
 }
 
 export const ToDo = ({ id, task }: iProps) => {
-    const [user] = useUser<'ForceUser'>()
+    const [user] = useUser()
     const [, updateTask, , removeTask] = useTasks(user.uid)
 
     const handleClick = () => {

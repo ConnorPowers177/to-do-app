@@ -5,7 +5,7 @@ import { TasksUnfinished } from './TasksUnfinished'
 import { ToDo } from './ToDo'
 
 const ToDoList = () => {
-  const [user] = useUser<'ForceUser'>()
+  const [user] = useUser()
   const [tasks, , , removeTask] = useTasks(user.uid)
 
   const toDoList = Object.entries(tasks ?? {})
