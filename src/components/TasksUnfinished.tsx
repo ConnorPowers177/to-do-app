@@ -6,7 +6,7 @@ const { entries } = Object;
 
 
 export const TasksUnfinished = () => {
-  const [user] = useUser()
+  const [user] = useUser() as any
   const [tasks] = useTasks(user.uid)
   const unfinishedTasks = tasks
     ? entries(tasks).filter(([, task]) => !task.completed).length
