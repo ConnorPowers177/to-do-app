@@ -11,9 +11,9 @@ export function useUser(): [User | null, (newUser: User) => void, () => void] {
     dispatch(setUser(newUser));
   }
 
-  const wrapppedRemoveUser = () => {
+  const wrappedRemoveUser = () => {
     dispatch(removeUser());
   }
 
-  return [user, wrappedSetUser, wrapppedRemoveUser]
+  return [user, wrappedSetUser, wrappedRemoveUser]
 }

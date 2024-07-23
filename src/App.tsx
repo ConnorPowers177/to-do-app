@@ -39,11 +39,14 @@ export function App() {
           <button onClick={() => setTheme(colorTheme)} className={colorTheme === 'light' ? 'fa-solid fa-sun text-slate-50' : 'fa-solid fa-moon'}></button>
         </span>
         {user ? <ToDoApp /> : <Login />}
-        <button className='relative font-BebasNeue bottom-16 mb-16 px-1 py-0.25 border-none text-sm rounded-full text-center text-slate-50 transition ease-in-out delay-150 bg-cyan-400 hover:scale-110 hover:bg-cyan-500 duration-300 dark:bg-violet-400 dark:hover:bg-violet-600' onClick={Logout}>Logout</button>
+        <button className='relative font-BebasNeue bottom-16 mb-16 px-1 py-0.25 border-none text-sm rounded-full text-center text-slate-50 transition ease-in-out bg-cyan-400 hover:scale-110 hover:bg-cyan-500 duration-300 dark:bg-violet-400 dark:hover:bg-violet-600' onClick={Logout}>Logout</button>
       </div>
     </div>
   );
 }
 
+//Make Guest Login Page with link to Create Account/Login
+//Organize CSS into assignable classes
+//Give icons hover effect
 
 export default App;
